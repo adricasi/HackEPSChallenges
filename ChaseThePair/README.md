@@ -62,3 +62,13 @@ chmod +x archivo
 Este reto incluye una plantilla para poder usarla como README en vuestro proyecto. Esta incluye información básica para poderos identificar como participantes de la HackEPS.
 
     ChaseThePair/resources/template.md
+
+## Información
+
+- Group name: HackaNoobs
+
+- Cost:
+
+- Time expend:
+
+- Sets size:
