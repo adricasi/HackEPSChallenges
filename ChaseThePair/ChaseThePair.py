@@ -9,10 +9,15 @@ import time
 
 def GetSets():
 	file = open(sets_file,"r")
-	sets = file.readline().split("[")
+	sets = file.readline()
+
+	#Start to count time
+	start_time = time.time()
+
+	sets = sets.split("[")
 	setA = sets[1].split("]")[0].split(",")
 	setB = sets[2].split("]")[0].split(",")
-	return setA,setB
+	return setA,setB,start_time
 
 def SortKey(element):
 	return int(element)
@@ -60,14 +65,17 @@ def GetClosestNumbers():
 
 sets_file = sys.argv[1]
 
-setA,setB = GetSets()
+setA,setB,start_time = GetSets()
+
 setA.sort(key = SortKey)
 setB.sort(key = SortKey)
-
 toChase = GenerateRandomValue()
+
 result =  GetClosestNumbers()
 
-print (toChase)
-print(setA)
-print(setB)
-print (result)
+
+time_spend = time.time() - start_time
+
+print ("Number to chase: " + str(toChase))
+print ("Result: " + str(result))
+print("time spend: " + str(time_spend)+ "ms")
